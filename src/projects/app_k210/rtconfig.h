@@ -109,6 +109,7 @@
 #define RT_USING_RTC
 #define RT_USING_SOFT_RTC
 #define RT_USING_SPI
+#define RT_USING_SPI_MSD
 
 /* Using USB */
 
@@ -205,26 +206,45 @@
 
 /* system packages */
 
+/* acceleration: Assembly language or algorithmic acceleration packages */
+
+
+/* Micrium: Micrium software products porting for RT-Thread */
+
 #define PKG_USING_FAL
 #define FAL_DEBUG_CONFIG
 #define FAL_DEBUG 1
 #define FAL_PART_HAS_TABLE_CFG
 #define PKG_USING_FAL_LATEST_VERSION
 #define PKG_FAL_VER_NUM 0x99999
+#define PKG_USING_LITTLEVGL2RTT
+#define PKG_USING_LITTLEVGL2RTT_V001
 
-/* Micrium: Micrium software products porting for RT-Thread */
+/* LittlevGL2RTT Options */
 
+#define LV_MEM_DYNAMIC
+#define LV_MEM_CUSTOM 1
+#define LV_COLOR_DEPTH_16
+#define LV_COLOR_DEPTH 16
+#define LV_HOR_RES 480
+#define LV_VER_RES 272
+#define LV_DPI 50
+#define LV_GC_DISABLE
+#define LV_ENABLE_GC 0
+#define LITTLEVGL2RTT_USING_DEMO
 
 /* peripheral libraries and drivers */
 
 
-/* miscellaneous packages */
+/* AI packages */
 
+
+/* miscellaneous packages */
 
 /* samples: kernel and components samples */
 
 
-/* games: games run on RT-Thread console */
+/* entertainment: terminal games and other interesting software packages */
 
 #define BOARD_K210_EVB
 
@@ -239,36 +259,45 @@
 
 /* General Purpose UARTs */
 
+#define BSP_USING_SPI1
+#define BSP_SPI1_CLK_PIN 27
+#define BSP_SPI1_D0_PIN 28
+#define BSP_SPI1_D1_PIN 26
+#define BSP_SPI1_USING_SS0
+#define BSP_SPI1_SS0_PIN 29
+#define BSP_SPI1_USING_SS1
+#define BSP_SPI1_SS1_PIN 8
 #define BSP_USING_LCD
-#define BSP_LCD_CS_PIN 38
-#define BSP_LCD_WR_PIN 36
-#define BSP_LCD_DC_PIN 37
-#define BSP_LCD_RST_PIN 39
+#define BSP_LCD_CS_PIN 36
+#define BSP_LCD_WR_PIN 39
+#define BSP_LCD_DC_PIN 38
+#define BSP_LCD_RST_PIN 37
 #define BSP_LCD_BACKLIGHT_PIN 12
-#define BSP_LCD_BACKLIGHT_ACTIVE_LOW
+#define BSP_LCD_BACKLIGHT_ACTIVE_HIGH
 #define BSP_LCD_CLK_FREQ 18000000
 #define BSP_BOARD_KD233
 #define BSP_LCD_X_MAX 240
 #define BSP_LCD_Y_MAX 320
 #define BSP_USING_CAMERA
-#define BSP_CAMERA_SCCB_SDA0_PIN 45
+#define BSP_CAMERA_SCCB_SDA0_PIN 1
 #define BSP_CAMERA_SCCB_SDA_PIN 40
 #define BSP_CAMERA_SCCB_SCLK_PIN 41
-#define BSP_CAMERA_CMOS_RST_PIN -1
-#define BSP_CAMERA_CMOS_VSYNC_PIN 42
-#define BSP_CAMERA_CMOS_PWDN_PIN 43
+#define BSP_CAMERA_CMOS_RST_PIN 42
+#define BSP_CAMERA_CMOS_VSYNC_PIN 43
+#define BSP_CAMERA_CMOS_PWDN_PIN 44
 #define BSP_CAMERA_CMOS_XCLK_PIN 46
 #define BSP_CAMERA_CMOS_PCLK_PIN 47
-#define BSP_CAMERA_CMOS_HREF_PIN 44
+#define BSP_CAMERA_CMOS_HREF_PIN 45
 #define __STACKSIZE__ 4096
 
 /* OpenMV */
 
+#define PKG_USING_OPENMV_CP
+#define OMV_BOARD_KD233
+#define OMV_HAL_K210
+#define OMV_RAW_BUF_SIZE 230400
 
 /* extmods */
 
-#define PRJ_USING_EXTMODS_MISC
-#define EXTMODS_MISC_USING_K210
-#define EXTMODS_K210_DVP
 
 #endif
